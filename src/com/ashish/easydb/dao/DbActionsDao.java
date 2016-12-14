@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface DbActionsDao {
 
-	public boolean checkDbServer(String dbName, String dbDriver, String dbUrl, String dbUser, String dbPassword);
+	public List<String> checkDbServer(String dbName, String dbDriver, String dbUrl, String dbUser, String dbPassword);
 	
-	public List<String> getAllTables(String dbName);
+	/*public List<String> getAllTables(String dbName);*/
 
 }

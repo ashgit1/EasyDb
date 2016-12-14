@@ -17,7 +17,10 @@ public class DBUtil {
 			log.info("Driver Loaded....");
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			log.info("Connection establish....");
-		} catch (Exception e) {
+		}catch(SQLException se){
+			log.info(se.toString());
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		return conn;

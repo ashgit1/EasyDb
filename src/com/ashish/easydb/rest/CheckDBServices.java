@@ -1,6 +1,8 @@
 package com.ashish.easydb.rest;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ws.rs.FormParam;
@@ -22,18 +24,27 @@ public class CheckDBServices {
 											@FormParam("db-url") String dbUrl, @FormParam("db-user") String dbUser, 
 											@FormParam("db-password") String dbPassword) {
 		
-		StringBuffer buffer = new StringBuffer();
-		buffer.append(dbName + ", " + dbDriver + ", " + dbUrl + ", " + dbUser + ", " + dbPassword);
-		String output = "Db Details : " + buffer;
-		String success="";
+		StringBuffer dbBuffer = new StringBuffer();
+		List<String> tableList = new ArrayList<String>();
+		StringBuffer tableBuffer = new StringBuffer();
+		
+		dbBuffer.append(dbName + ", " + dbDriver + ", " + dbUrl + ", " + dbUser + ", " + dbPassword);
+		String output = "Db Details : " + dbBuffer;
 		
 		DbActionsDao obj = new DbActionsDaoImpl();
-		if(obj.checkDbServer(dbName, dbDriver, dbUrl, dbUser, dbPassword)){
-			success= "Connection is Sucess";
+		tableList = obj.checkDbServer(dbName, dbDriver, dbUrl, dbUser, dbPassword);
+		
+		if(tableList!=null){
+			for(String table : tableList){
+				tableBuffer.append(table);
+				tableBuffer.append(System.lineSeparator());
+			}
 		}
 		
 		log.info(output);
+		System.out.println(output);
+		System.out.println(tableBuffer);
 		
-		return Response.status(200).entity(success).build();
+		return Response.status(200).entity(tableBuffer.toString()).build();
 	}
 }

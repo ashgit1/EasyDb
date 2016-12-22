@@ -4,13 +4,24 @@
 <meta charset="ISO-8859-1">
 <title>Easy DB</title>
 <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"><font size="15px">Easy DB </font></a>
+		</div>
+	</div>
+</nav>
+<div class="container">
 	<form action="easydb/db/checkdb" method="post">
-		<table>
-			<tr>
-				<th>DB Vendor:</th>
-				<th>
+		
+				<label for="db-vendor">DB Vendor:</label>
 				<div class="styled-select blue semi-square">
 					<select name="db-name">
 						<option value="mysql">MYSQL</option>
@@ -18,11 +29,8 @@
 						<option value="oracle">ORACLE</option>
 					</select>
 				</div>
-				</th>
-			</tr>
-			<tr>
-				<th>Driver Name:</th>
-				<th>
+
+				<label for="driver-name">Driver Name:</label>
 				<div class="styled-select blue semi-square">
 					<select name="db-driver">
 						<option value="com.mysql.jdbc.Driver">Mysql-Driver</option>
@@ -30,29 +38,37 @@
 						<option value="oracle.jdbc.driver.OracleDriver">Oracle-Driver</option>
 					</select>
 				</div>
-				</th>
-			</tr>
-			<tr>
-				<th>DB URL:</th>
-				<th>
-					<input type="text" name="db-url" />
-				</th>
-			</tr>
-			<tr>
-				<th>User:</th>
-				<th><input type="text" name="db-user" /></th>
-			</tr>
-			<tr>
-				<th>Password:</th>
-				<th><input type="password" name="db-password" /></th>
-			</tr>
-			<tr>
-				<th colspan="2"><input type="submit" value="Check DB" /></th>
-			</tr>
-		</table>
-		Sample : <br>
+				
+				<label for="db-url">DB URL:</label>
+					<div class="form-group">
+						<input type="text" class="form-control" name="db-url" value="jdbc:mysql://localhost:3306/" />
+					</div>
+					
+				<label for="user-name">User:</label>
+					<div class="form-group">
+						<input type="text" class="form-control" name="db-user" />
+					</div>
+				
+				<label for="password">Password:</label>
+					<div class="form-group">
+						<input type="password" class="form-control" name="db-password" />
+					</div>
+					
+				<input type="submit" class="btn btn-primary btn-lg" value="Check DB" />
+
+		<!-- <br><br> Sample : <br>
 		jdbc:mysql://localhost:3306/ <br>
-		jdbc:derby://localhost:1527/ <br>
+		jdbc:derby://localhost:1527/ <br> -->
 	</form>
+</div>
+<br><br>
+<div class="container">
+	<footer>
+		<p>
+			&copy; <a href="https://www.facebook.com/ashishkgrich">Ashishkumar Gupta</a> 2016-2017
+		</p>
+	</footer>
+</div>
+
 </body>
 </html>

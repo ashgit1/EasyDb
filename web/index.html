@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -522,6 +523,56 @@
     <script src="assets/js/custom-scripts.js"></script>
 
 
+=======
+	<form action="easydb/db/checkdb" method="post">
+		<table>
+			<tr>
+				<th>DB Vendor:</th>
+				<th>
+				<div class="styled-select blue semi-square">
+					<select name="db-name">
+						<option value="mysql">MYSQL</option>
+						<option value="derby">DERBY</option>
+						<option value="oracle">ORACLE</option>
+					</select>
+				</div>
+				</th>
+			</tr>
+			<tr>
+				<th>Driver Name:</th>
+				<th>
+				<div class="styled-select blue semi-square">
+					<select name="db-driver">
+						<option value="com.mysql.jdbc.Driver">Mysql-Driver</option>
+						<option value="org.apache.derby.jdbc.ClientDriver">Derby-Driver</option>
+						<option value="oracle.jdbc.driver.OracleDriver">Oracle-Driver</option>
+					</select>
+				</div>
+				</th>
+			</tr>
+			<tr>
+				<th>DB URL:</th>
+				<th>
+					<input type="text" name="db-url" value="jdbc:mysql://localhost:3306/" style="width:200px" />
+				</th>
+			</tr>
+			<tr>
+				<th>User:</th>
+				<th><input type="text" name="db-user" style="width:200px" /></th>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<th><input type="password" name="db-password" style="width:200px" /></th>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="Check DB" /></th>
+			</tr>
+		</table>
+		Sample : <br>
+		jdbc:mysql://localhost:3306/ <br>
+		jdbc:derby://localhost:1527/ <br>
+	</form>
+>>>>>>> Stashed changes
 </body>
 
 </html>

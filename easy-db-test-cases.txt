@@ -1,0 +1,7 @@
+Test Cases to cover:
+====================
+
+1. com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'resource-db' []
+2. db exits but no tables found message to be printed []
+3. direct access to http://localhost:8080/EasyDB/tables.jsp shows null pointer []
+4. Fix the Oracle connectivity issues []
